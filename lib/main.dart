@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 import 'views/dashboard_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResponsiveDashboard());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class ResponsiveDashboard extends StatelessWidget {
+  const ResponsiveDashboard({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
