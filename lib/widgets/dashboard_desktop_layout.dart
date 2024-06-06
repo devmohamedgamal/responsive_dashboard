@@ -12,13 +12,22 @@ class DashboardDesktopLayout extends StatelessWidget {
     return const Row(
       children: [
         Expanded(child: CustomDrawer()),
+        SizedBox(
+          width: 32,
+        ),
         Expanded(
           flex: 2,
-          child: Column(
-            children: [
-              AllExpenses(),
-            ],
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 40),
+            child: Column(
+              children: [
+                AllExpenses(),
+              ],
+            ),
           ),
+        ),
+        SizedBox(
+          width: 32,
         ),
       ],
     );
