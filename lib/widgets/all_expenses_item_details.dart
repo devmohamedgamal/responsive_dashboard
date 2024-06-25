@@ -7,8 +7,10 @@ import '../models/all_expenses_item_model.dart';
 import '../utils/styles.dart';
 
 class AllExpensesItemDetails extends StatelessWidget {
-  const AllExpensesItemDetails({super.key, required this.item});
+  const AllExpensesItemDetails(
+      {super.key, required this.item, this.isSelected = false});
   final AllExpensesItemModel item;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +19,27 @@ class AllExpensesItemDetails extends StatelessWidget {
       children: [
         Text(
           item.title,
-          style: Styles.styleSemiBold16,
+          style: isSelected
+              ? Styles.styleSemiBold16.copyWith(color: Colors.white)
+              : Styles.styleSemiBold16,
         ),
         const SizedBox(
           height: 8,
         ),
         Text(
           item.date,
-          style: Styles.styleRegular14,
+          style: isSelected
+              ? Styles.styleRegular14.copyWith(color: Colors.white)
+              : Styles.styleRegular14,
         ),
         const SizedBox(
           height: 16,
         ),
         Text(
           "\$${item.amount}",
-          style: Styles.styleSemiBold24,
+          style: isSelected
+              ? Styles.styleSemiBold24.copyWith(color: Colors.white)
+              : Styles.styleSemiBold24,
         ),
       ],
     );
